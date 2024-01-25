@@ -2,6 +2,9 @@
 
 set -eux
 
+# For debugging
+env | sort
+
 # Default LDFLAGS from conda environment break the build on Linux
 if [ "$GOOS" = linux ]; then
   unset LDFLAGS
