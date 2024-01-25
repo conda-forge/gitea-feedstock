@@ -20,6 +20,12 @@ requirements:
     - go-licenses >=1.6.0
     - make
     - nodejs >=20
+    # Makefile uses some unix bash commands
+    - m2-filesystem  # [win]
+    - m2-bash  # [win]
+    - m2-base  # [win]
+    - m2-grep  # [win]
+    - m2-sed  # [win]
   run:
     - git
 
