@@ -7,6 +7,9 @@ if [ "$GOOS" = linux ]; then
   unset LDFLAGS
 fi
 
+# Used by Makefile to include version in binary
+echo $PKG_VERSION > VERSION
+
 TAGS="bindata sqlite sqlite_unlock_notify" make build
 
 mkdir -p $PREFIX/bin
