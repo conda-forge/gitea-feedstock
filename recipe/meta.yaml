@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 build:
-  number: 0
+  number: 1
   binary_relocation: False
   script:
     - curl -Lo $PREFIX/bin/gitea https://dl.gitea.io/gitea/{{ version }}/gitea-{{ version }}-linux-amd64  # [linux64]
