@@ -1,34 +1,45 @@
 {% set name = "gitea" %}
-{% set version = "1.2" %}
+{% set version = "1.21.4" %}
 
 package:
-  name: gitea
+  name: {{ name|lower }}
   version: {{ version }}
+
+source:
+  url: https://github.com/go-gitea/{{ name }}/archive/v{{ version }}.tar.gz
+  sha256: d6464552df69636bfe5883e54870fe31eec0e602954ab16b94d297f3913498a5
 
 build:
   number: 0
-  binary_relocation: False
-  script:
-    - curl -Lo $PREFIX/bin/gitea https://dl.gitea.io/gitea/{{ version }}/gitea-{{ version }}-linux-amd64  # [linux64]
-    - curl -Lo $PREFIX/bin/gitea https://dl.gitea.io/gitea/{{ version }}/gitea-{{ version }}-linux-386  # [linux32]
-    - curl -Lo $PREFIX/bin/gitea https://dl.gitea.io/gitea/{{ version }}/gitea-{{ version }}-darwin-10.6-amd64  # [osx]
-    - curl -Lo %LIBRARY_BIN%\gitea.exe https://dl.gitea.io/gitea/{{ version }}/gitea-{{ version }}-windows-4.0-amd64.exe  # [win64]
-    - curl -Lo %LIBRARY_BIN%\gitea.exe https://dl.gitea.io/gitea/{{ version }}/gitea-{{ version }}-windows-4.0-386.exe  # [win32]
-    - chmod +x $PREFIX/bin/gitea  # [unix]
 
 requirements:
   build:
-    - curl
+    - {{ compiler('cgo') }} 1.21
+    - {{ compiler('c') }}
+    - file  # [not win]
+    - go-licenses >=1.6.0
+    - make
+    - nodejs >=20
+    # Makefile uses some unix bash commands
+    - m2-filesystem  # [win]
+    - m2-bash  # [win]
+    - m2-base  # [win]
+    - m2-grep  # [win]
+    - m2-sed  # [win]
   run:
     - git
 
 test:
   commands:
+    - gitea --version
     - gitea --help
 
 about:
   home: https://gitea.io
   license: MIT
+  license_file:
+    - LICENSE
+    - license-files/
   summary: Git with a cup of tea
   description: |
       The goal of this project is to make the easiest, fastest, and most
@@ -38,4 +49,5 @@ about:
 
 extra:
   recipe-maintainers:
+    - manics
     - nehaljwani
