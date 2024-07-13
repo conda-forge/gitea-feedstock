@@ -11,6 +11,8 @@ source:
 
 build:
   number: 0
+  # Can't currently build on Windows, but config is kept so we can try again in future
+  skip: true  # [win]
 
 requirements:
   build:
