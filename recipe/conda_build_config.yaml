@@ -1,0 +1,5 @@
+# 1.22.1 fails with undefined symbol _SecTrustEvaluateWithError
+# https://conda-forge.org/docs/maintainer/knowledge_base/#requiring-newer-macos-sdks
+# Please consult conda-forge/core before doing this
+MACOSX_SDK_VERSION:        # [osx and x86_64]
+  - "10.14"                # [osx and x86_64]
