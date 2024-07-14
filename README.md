@@ -193,4 +193,5 @@ Feedstock Maintainers
 
 * [@manics](https://github.com/manics/)
 * [@nehaljwani](https://github.com/nehaljwani/)
+* [@techknowlogick](https://github.com/techknowlogick/)
 
