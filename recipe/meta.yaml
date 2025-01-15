@@ -20,7 +20,10 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - file  # [not win]
-    - go-licenses >=1.6.0
+    # - go-licenses >=1.6.0
+    # For unknown reasons we've started hitting
+    # https://github.com/google/go-licenses/issues/128
+    - go-licenses <1.1
     - make
     - nodejs >=20
     # Makefile uses some unix bash commands
