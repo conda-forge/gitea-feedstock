@@ -1,5 +1,5 @@
 {% set name = "gitea" %}
-{% set version = "1.24.2" %}
+{% set version = "1.24.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/go-gitea/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: a530458b1e80758d882d4ba9a2bab518a4747fcbcac1f6c951de72b398f442ce
+  sha256: 1f1df850490c9740f122e5c99748fcb39bdcb95d168f60649d4c550c12926373
 
 build:
   number: 0
