@@ -16,7 +16,7 @@ build:
 
 requirements:
   build:
-    - {{ compiler('cgo') }} 1.24
+    - {{ compiler('cgo') }} 1.25
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - file  # [not win]
