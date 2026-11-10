@@ -19,15 +19,12 @@ build:
 
 requirements:
   build:
-    - ${{ compiler('cgo') }} 1.25
+    - ${{ compiler('cgo') }} 1.27.*
     - ${{ compiler('c') }}
     - ${{ stdlib("c") }}
     - if: not win
       then: file
-    # - go-licenses >=1.6.0
-    # For unknown reasons we've started hitting
-    # https://github.com/google/go-licenses/issues/128
-    - go-licenses <1.1
+    - go-licenses
     - make
     - nodejs >=20
     - pnpm
