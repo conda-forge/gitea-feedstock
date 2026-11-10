@@ -3,7 +3,7 @@ About gitea-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gitea-feedstock/blob/main/LICENSE.txt)
 
-Home: https://about.gitea.com
+Home: https://about.gitea.com/
 
 Package license: MIT
 
@@ -11,11 +11,10 @@ Summary: Git with a cup of tea
 
 Development: https://github.com/go-gitea/gitea
 
-Documentation: https://docs.gitea.com
+Documentation: https://docs.gitea.com/
 
 The goal of this project is to make the easiest, fastest, and most
 painless way of setting up a self-hosted Git service.
-
 
 Current build status
 ====================
