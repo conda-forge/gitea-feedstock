@@ -16,6 +16,11 @@ echo $PKG_VERSION > VERSION
 # https://github.com/go-gitea/gitea/blob/0d59b737aa7a0200f8334cbfa29e5056390b4845/Dockerfile
 export TAGS="bindata timetzdata"
 make frontend
+# Remove frontend packages to prevent go generate from discovering Go packages in Library/pnpm.
+#   pattern ./...: directory Library/pnpm/.../flatted/golang/pkg/flatted outside main module or its selected dependencies
+#   make: *** [Makefile:508: generate-go] Error 1
+rm -rf $PREFIX/Library/pnpm
+
 make generate-backend
 make gitea
 
