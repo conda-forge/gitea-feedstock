@@ -19,7 +19,7 @@ make frontend
 # Remove frontend packages to prevent go generate from discovering Go packages in Library/pnpm.
 #   pattern ./...: directory Library/pnpm/.../flatted/golang/pkg/flatted outside main module or its selected dependencies
 #   make: *** [Makefile:508: generate-go] Error 1
-rm -rf $PREFIX/Library/pnpm
+rm -rf Library/pnpm
 
 make generate-backend
 make gitea
