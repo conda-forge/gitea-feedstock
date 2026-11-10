@@ -13,8 +13,11 @@ unset LDFLAGS
 # Used by Makefile to include version in binary
 echo $PKG_VERSION > VERSION
 
-# https://github.com/go-gitea/gitea/blob/v1.22.1/Dockerfile
-TAGS="bindata timetzdata sqlite sqlite_unlock_notify" make build
+# https://github.com/go-gitea/gitea/blob/0d59b737aa7a0200f8334cbfa29e5056390b4845/Dockerfile
+export TAGS="bindata timetzdata"
+make frontend
+make generate-backend
+make gitea
 
 mkdir -p $PREFIX/bin
 cp gitea $PREFIX/bin/gitea
