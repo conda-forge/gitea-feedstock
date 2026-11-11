@@ -1,5 +1,4 @@
-# 1.22.1 fails with undefined symbol _SecTrustEvaluateWithError
-# https://conda-forge.org/docs/maintainer/knowledge_base/#requiring-newer-macos-sdks
-# Please consult conda-forge/core before doing this
-MACOSX_SDK_VERSION:        # [osx and x86_64]
-  - "10.14"                # [osx and x86_64]
+# Go 1.27 links macOS binaries against a minimum of 13.0
+# https://github.com/conda-forge/go-feedstock/blob/main/recipe/conda_build_config.yaml
+c_stdlib_version:         # [osx]
+  - "13.0"                # [osx]
